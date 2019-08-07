@@ -232,13 +232,13 @@
     <Microsoft.DotNet.Arcade.Sdk.Unsign FilePath="%(_UnsignAssembly.Identity)" />
 
     <!-- Repack optimized dependencies -->
-    <Microsoft.DotNet.ReplacePackageParts SourcePackage="%(_PackageToRepack.Identity)"
-                                          DestinationFolder="$(VisualStudioBuildPackagesDir)"
-                                          NewVersionSuffix="$(_OptimizedNuGetPackageVersionSuffix)"
-                                          Parts="%(_PackageToRepack.Parts)"
-                                          ReplacementFiles="%(_PackageToRepack.ReplacementFiles)">
+    <Microsoft.DotNet.Tools.ReplacePackageParts SourcePackage="%(_PackageToRepack.Identity)"
+                                                DestinationFolder="$(VisualStudioBuildPackagesDir)"
+                                                NewVersionSuffix="$(_OptimizedNuGetPackageVersionSuffix)"
+                                                Parts="%(_PackageToRepack.Parts)"
+                                                ReplacementFiles="%(_PackageToRepack.ReplacementFiles)">
       <Output TaskParameter="NewPackage" ItemName="FileWrites" />
-    </Microsoft.DotNet.ReplacePackageParts>
+    </Microsoft.DotNet.Tools.ReplacePackageParts>
 
     <!-- Copy unoptimized dependencies -->
     <Copy SourceFiles="@(_PackageToCopy)" DestinationFolder="$(VisualStudioBuildPackagesDir)">
