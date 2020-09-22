@@ -1210,9 +1210,9 @@ public static class C
 {
     static void Main()
     {
-        Test(null, ""aa"");
+        Test(null, ""bb"");
         System.Console.Write('#');
-        Test(""aa"", ""bb"");
+        Test(""bb"", ""cc"");
     }
 
     static void Test(string s, dynamic ds)
